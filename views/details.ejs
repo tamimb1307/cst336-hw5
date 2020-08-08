@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+
+<head>
+    <title>Movie Details</title>
+</head>
+<body>
+        <main>
+            <h1>Movie Info</h1>
+        <hr>
+        <div id="resultsContainer">
+            <img src=" <%= movieInfo['img'] %> ">
+            <h4>Name: <%= movieInfo['name'] %></h4>
+            <h4>Genre: <%= movieInfo['genre'] %></h4>
+            <h4>Release Date: <%= movieInfo['date'] %></h4>
+            <h4>Duration: <%= movieInfo['time'] %></h4>
+            <h4>Plot: <%= movieInfo['plot'] %></h4>
+            <h4>Revenue: <%= movieInfo['revenue'] %></h4>
+            <h4>Rating: <%= movieInfo['rating'] %></h4>
+            <a href="/"><button class="btn-main">Search More</button></a>
+            <a href="/getMovies"><button class="btn-main">Go back to Favorites</button></a>
+            
+        </main>
+        </div>
+        
+        <%- include('partials/footer.ejs') %>
+
+</body>
+</html>
+

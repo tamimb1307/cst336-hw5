@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %>
+    <style>
+    body{
+        background-repeat: repeat;
+        background-size: auto;
+    }
+</style>
+
+<div id="favContainer">
+    
+   <h1>Favorite Movies</h1>
+   <div class="flex-container">
+    <% rows.forEach(function(row,i){ %>
+        <div class="fav-movie">
+            <a>
+                <img src="<%= row['poster_url'] %>">
+                <h4><%= row['name'] %></h4>
+            </a>
+            <a href="/api/update?action=delete&imdb=<%= row['imdb_id'] %>"><button>Remove from Favorites</button></a>
+            <a href="/getDetails?name=<%= row['name'] %>"><button>More Details</button></a>
+        </div>
+    <%}); %>
+   </div>
+    
+      
+    <!--<div id="favorites"></div>-->
+    <a class = "link" href="/"> <button>Back to Search</button> </a>
+    <input type="hidden" id="keywordSelected">
+
+<%- include('partials/footer.ejs') %>
